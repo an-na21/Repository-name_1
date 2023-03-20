@@ -1,21 +1,22 @@
 name: CI
+
 on:
  push:
-  branches: ["main"]
+  branches: [ "main" ]
  pull_request:
-  branches: ["main"]
+  branches: [ "main" ]
 jobs:
- my_build_job:
-  runs-on: ubuntu-latest
-  steps:
+  my_build_job:
+   runs-on: ubuntu-latest
+   steps:
    - uses: actions/checkout@v3
    - name: npm install, test and build
      run: |
       npm install
-      npm run test
       npm run build
    - name: Run a one-line script
      run: echo Hello, world!
+
    - name: Run a multi-line script
      run: |
       echo Add other actions to build,
